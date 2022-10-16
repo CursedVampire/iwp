@@ -29,19 +29,8 @@
         class="sectionimage"
     />
     <div class="slogan">
-        We find you when we want to!<br />
         The <span class="FitKart">FitKart</span> experience is
-        seamless and unavoidable, you cannot escape us!<br />
-    </div>
-    <img
-        src="assets/images/hell-landscape.jpg"
-        class="sectionimage"
-    />
-    <div class="slogan">
-        The <span style="color: #d08770">end is nigh</span>, forces
-        beyond your comprehension are approaching, we believe in
-        providing happiness in the last moments of the fragile life
-        of your world.<br />
+        seamless!
     </div>
 </article>
 
