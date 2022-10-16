@@ -4,6 +4,7 @@
     $path_to_public = '../';
     $links = [
         ['title' => 'Home', 'href' => 'index.php'],
+        ['title' => 'Login', 'href' => 'users/login.php'],
         ['title' => 'About', 'href' => 'about.php']
     ];
     require '../templates/top.php';
