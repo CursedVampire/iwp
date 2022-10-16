@@ -1,3 +1,5 @@
+-- this trigger is no longer needed
+-- the logic is now handled in the registration page
 delimiter //
 CREATE
     TRIGGER add_account_to_buyer_or_seller
