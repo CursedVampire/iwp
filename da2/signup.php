@@ -1,4 +1,5 @@
-<?php require('php/session_users.php') ?>
+<?php require('php/database.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,13 +31,8 @@
                     $phone = $_POST['phone'];
                     $email = $_POST['email'];
 
-                    $_SESSION['users'][$username] = [
-                        "password" => $password,
-                        "name" => $name,
-                        "email" => $email,
-                        "phone" => $phone
-                    ];
-                    header('Location: login.php');
+                    add_user($con, $username, $password, $name, $email, $phone);
+                    header('location: login.php');
                 } else {
             ?>
                 <form method="POST">

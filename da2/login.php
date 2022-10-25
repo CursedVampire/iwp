@@ -1,4 +1,4 @@
-<?php require('php/session_users.php') ?>
+<?php require('php/database.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,10 +29,7 @@
                 if (isset($_POST['username'])) {
                     $username = $_POST['username'];
                     $password = $_POST['password'];
-                    foreach ($_SESSION['users'] as $uname => $details) {
-                        $valid = ($username == $uname && $details['password'] == $password);
-                        if ($valid) break;
-                    }
+                    $valid = is_valid_username_password($con, $username, $password);
                     if ($valid) {
                         $show_form = false;
                         echo "Logged in as $username";
