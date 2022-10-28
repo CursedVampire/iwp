@@ -1,5 +1,15 @@
-<?php require('php/database.php') ?>
-
+<?php
+    require('php/database.php');
+    if (isset($_POST['name'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        header('Location: login.php');
+        add_user($con, $username, $password, $name, $email, $phone);
+    } else {
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,18 +33,6 @@
         <main>
             <section style="font-size: 1.5rem">
             <h1>Signup</h1>
-            <?php
-                if (isset($_POST['name'])) {
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-                    $name = $_POST['name'];
-                    $phone = $_POST['phone'];
-                    $email = $_POST['email'];
-
-                    add_user($con, $username, $password, $name, $email, $phone);
-                    header('location: login.php');
-                } else {
-            ?>
                 <form method="POST">
                     <label for="name">Name: </label>
                     <input required name="name" />
@@ -54,11 +52,11 @@
                     <button type="submit">Submit</button>
                     <button type="reset">Reset</button>
                 </form>
-            <?php } ?>
+            
             The password should be minimum 8 characters long
             </section>
         </main>
         <footer>Made by Samridh<br />copyleft info<br />credits</footer>
     </body>
 </html>
-
+<?php } ?>

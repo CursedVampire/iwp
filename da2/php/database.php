@@ -8,10 +8,18 @@
     if ($con->connect_errno) die("failed to connect");
 
     function add_user($con, $u, $p, $n, $e, $ph) {
-        $add_query = "INSERT INTO Person_Details VALUES ('$u', '$p', '$n', '$e', '$ph');";
-        var_dump($add_query);
+        $add_query = "
+            INSERT
+                INTO Person_Details
+                VALUES (
+                    '$u',
+                    '$p',
+                    '$n',
+                    '$e',
+                    '$ph'
+                )
+            ;";
         if ($result = $con->query($add_query)) {
-            echo $result->num_rows . "<br />";
             $result->free_result();
         }
     }
@@ -31,5 +39,23 @@
             if ($result->num_rows > 0) return true;
         }
         return false;
+    }
+
+    function get_email($con, $u) {
+        $get_query = "
+            SELECT
+                email
+            FROM Person_Details
+            WHERE
+                username='$u'
+            ;
+        ";
+        if ($result = $con->query($get_query)) {
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_row();
+                return $row[0];
+            }
+        }
+        return '';
     }
 ?>
