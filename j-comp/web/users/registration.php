@@ -12,7 +12,6 @@
         password_hash($_POST['password'], PASSWORD_DEFAULT)
     );
     $user_is_seller = $_POST['seller'] == 'Y' ? 'true' : 'false';
-    $image_path = '';
     // user image
     if (array_key_exists("user_image", $_FILES)) { // if an image was uploaded
         $filename = $_FILES["user_image"]["name"];
@@ -21,9 +20,7 @@
         $upload_dir = '../assets/db/accounts/';
         $upload_file = $upload_dir . $email_id . $filename;
         move_uploaded_file($tempname, $upload_file);
-        $image_path = 'assets/db/accounts/'. $email_id . $filename;
     }
-    $image_path = handleNull($image_path);
 
     // PersonalDetails Table
     $country_code = mysqli_real_escape_string($con, $_POST['country_code']);
@@ -55,14 +52,12 @@
             email_id,
             password,
             user_is_seller,
-            joined_on,
-            image_path
+            joined_on
         ) VALUES (
             '$email_id',
             '$password',
             $user_is_seller,
-            DATE(SYSDATE()),
-            $image_path
+            DATE(SYSDATE())
         );
     ";
 

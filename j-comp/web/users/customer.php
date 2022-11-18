@@ -20,11 +20,20 @@
     // generating recommendations
     require('../recommendation-engine.php');
     $target=$_SESSION['user_email_id'];
+    $user_reviews = (mysqli_query($con,"
+        SELECT
+            product_code,
+            reviewer_email_id,
+            rating_out_of_five
+        FROM ProductReviews
+        WHERE reviewer_email_id = '".$_SESSION['user_email_id']."';
+    "));
+    if (mysqli_num_rows($user_reviews) > 0)
     $preds = getRecommendation($reviews, $target);
 ?>
 <main>
     <article>
-        <section>
+        <!-- <section>
                 <h2 id="Search">Search</h2>
             <input
                 class="text"
@@ -32,7 +41,7 @@
                 style="width: 85%"
                 type="search"
             /><button style="width: 15%">Search</button>
-        </section>
+        </section> -->
         <section>
             <h2 id="Recommendations">Recommendations</h2>
             <div class="prod-cards">
@@ -60,13 +69,6 @@
                 }
                 ?>
             </div>
-        </section>
-                <section>
-            <h2 id="Cart">Cart</h2>
-            <ul>
-                <li></li>
-            </ul>
-        </section>
         <section>
             <h2 id="Products">Product</h2>
             <div class="prod-cards">
@@ -96,13 +98,11 @@
         </section>
     </article>
     <aside id="aside">
-        <a class="navlink" href="#Search">Search</a><br />
-        <hr />
+        <!-- <a class="navlink" href="#Search">Search</a><br /> -->
+        <!-- <hr /> -->
         <a class="navlink" href="#Recommendations">Recommendations</a><br />
         <hr />
         <a class="navlink" href="#Products">Products</a><br />
-        <hr />
-        <a class="navlink" href="#Your Reviews">Your Reviews</a><br />
         <hr />
     </aside>
 </main>
