@@ -31,24 +31,6 @@
         WHERE email_id='".$product['seller_email_id']."';
     ")));
 
-    $reviews = (mysqli_query($con,"
-        SELECT
-            first_name,
-            middle_name,
-            last_name,
-            review_date,
-            review_time,
-            review_title,
-            review_text,
-            rating_out_of_five,
-            reviewer_email_id
-        FROM
-            ProductReviews
-            JOIN PersonalDetails
-            ON ProductReviews.reviewer_email_id = PersonalDetails.email_id
-        WHERE product_code = '".$product_id."';
-    "));
-
     // submitting the review (if it is there and the user hasn't already submitted)
     if (isset($_POST['send_review'])) {
         // check if review exists
@@ -76,6 +58,24 @@
             // $show_form=false;
         }
     }
+
+    $reviews = (mysqli_query($con,"
+        SELECT
+            first_name,
+            middle_name,
+            last_name,
+            review_date,
+            review_time,
+            review_title,
+            review_text,
+            rating_out_of_five,
+            reviewer_email_id
+        FROM
+            ProductReviews
+            JOIN PersonalDetails
+            ON ProductReviews.reviewer_email_id = PersonalDetails.email_id
+        WHERE product_code = '".$product_id."';
+    "));
 
     $show_form = true;
     require('./templates/top.php');
