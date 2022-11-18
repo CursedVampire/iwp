@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="<?php echo $path_to_public; ?>static/index.css" />
+        <link rel="stylesheet" href="<?php echo $path_to_public; ?>static/cards.css" />
         <title><?php echo $title; ?></title>
     </head>
 

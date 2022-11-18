@@ -1,0 +1,11 @@
+.prod-cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.prod-card {
+    background-color: #4c566a;
+    border-radius: 10px;
+    padding: 10px;
+}
