@@ -16,7 +16,6 @@
     <table>
         <tr>
             <th>Email ID</th>
-            <th>Image path</th>
             <th>First Name</th>
             <th>Middle Name</th>
             <th>Last Name</th>
@@ -28,11 +27,10 @@
             <th>Phone Number</th>
         </tr>
         <?php
-            printTable(1, $path_to_public, mysqli_query($con,
+            printTable($path_to_public, mysqli_query($con,
                 "
                     SELECT
                         email_id,
-                        image_path,
                         first_name,
                         middle_name,
                         last_name,
@@ -63,7 +61,7 @@
             <th>Contact Number</th>
         </tr>
         <?php
-            printTable(-1, $path_to_public, mysqli_query($con,
+            printTable($path_to_public, mysqli_query($con,
                 "
                     SELECT
                         email_id,
@@ -91,7 +89,7 @@
             <th>Name (as on card)</th>
         </tr>
         <?php
-            printTable(-1, $path_to_public, mysqli_query($con,
+            printTable($path_to_public, mysqli_query($con,
                 "
                     SELECT
                         email_id,
@@ -118,7 +116,7 @@
             <th>Account Number</th>
         </tr>
         <?php
-            printTable(-1, $path_to_public, mysqli_query($con,
+            printTable($path_to_public, mysqli_query($con,
                 "
                 SELECT
                     email_id,
@@ -144,10 +142,9 @@
             <th>Inventory Size</th>
             <th>Seller</th>
             <th>Added on</th>
-            <th>Image path</th>
         </tr>
         <?php
-            printTable(6, $path_to_public, mysqli_query($con,
+            printTable($path_to_public, mysqli_query($con,
             "
             SELECT
                 name,
@@ -155,8 +152,7 @@
                 price_in_paisa,
                 inventory_size,
                 seller_email_id,
-                added_on,
-                image_path
+                added_on
             FROM Products
             ORDER BY product_code;
             "
@@ -175,7 +171,7 @@
             <th>Review Text</th>
         </tr>
         <?php
-            printTable(-1, $path_to_public, mysqli_query(
+            printTable($path_to_public, mysqli_query(
                 $con,
                 "
                     SELECT
@@ -209,7 +205,7 @@
             <th>Payment Time</th>
         </tr>
         <?php
-            printTable(-1, $path_to_public, mysqli_query(
+            printTable($path_to_public, mysqli_query(
                 $con,
                 "
                     SELECT
@@ -241,7 +237,7 @@
             <th>Seller</th>
         </tr>
         <?php
-            printTable(-1, $path_to_public, mysqli_query(
+            printTable($path_to_public, mysqli_query(
                 $con,
                 "
                     SELECT

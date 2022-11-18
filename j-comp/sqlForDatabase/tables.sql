@@ -3,7 +3,6 @@ CREATE TABLE Accounts (
     password varchar(255) NOT NULL,
     joined_on date NOT NULL,
     user_is_seller boolean NOT NULL,
-    image_path varchar(255),
     other_info text,
 
     PRIMARY KEY (email_id)
@@ -86,7 +85,6 @@ CREATE TABLE Products (
     sold_on date,
     seller_email_id varchar(255) NOT NULL,
     inventory_size bigint(16) NOT NULL,
-    image_path varchar(255),
     other_info text,
 
     FOREIGN KEY (seller_email_id) REFERENCES Sellers(email_id) ON DELETE CASCADE,

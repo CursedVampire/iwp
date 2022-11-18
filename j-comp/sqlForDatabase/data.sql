@@ -3,20 +3,17 @@ INSERT
         email_id,
         password,
         joined_on,
-        user_is_seller,
-        image_path
+        user_is_seller
     ) VALUES (
         'samridh.anand.paatni@gmail.com',
         '$2y$10$bzpEK46A8STfZQH51Byw.essn1jyX3Dg2bIYkKA7Tx5MlFCRT8TLq', -- samridh
         DATE(SYSDATE()),
-        true,
-        'assets/db/accounts/account_1.jpeg'
+        true
     ), (
         'elessar6969@hotmale.com',
         '$2y$10$uGVsYNaeLDTtjRGMwVTPvec.DDwAwUk52UIR5RE/kxsMQnOMMy8.u', -- youBowToNoOne
         DATE(SYSDATE()),
-        false,
-        'assets/db/accounts/account_2.jpeg'
+        false
     );
 
 INSERT
@@ -134,8 +131,7 @@ INSERT
         added_on,
         is_sold,
         seller_email_id,
-        inventory_size,
-        image_path
+        inventory_size
     ) VALUES (
         'FitKart Fundamentals Water Bottle | 1L | Silver',
         'Refresh yourself with cool water by using this 1 litre bottle!!! FitKart fundamentals brings you the best products in all categories. See a new item on FitKart, but it''s too pricey? Wait 2 weeks and FitKart Fundamentals with come with the same product for half the price! FitKart fundamentals, ''you make it, we remake it and we get rich!''',
@@ -143,8 +139,7 @@ INSERT
         DATE(SYSDATE()),
         false,
         'samridh.anand.paatni@gmail.com',
-        5,
-        'assets/db/products/product_1.jpg'
+        5
     ), (
         'FitKart Fundamentals Backpack | 5L | Blue',
         'Carry all your stuff in style! FitKart fundamentals brings you the best products in all categories. See a new item on FitKart, but it''s too pricey? Wait 2 weeks and FitKart Fundamentals with come with the same product for half the price! FitKart fundamentals, ''you make it, we remake it and we get rich!''',
@@ -152,8 +147,7 @@ INSERT
         DATE(SYSDATE()),
         false,
         'samridh.anand.paatni@gmail.com',
-        4,
-        'assets/db/products/product_2.jpg'
+        4
     );
 
 INSERT
