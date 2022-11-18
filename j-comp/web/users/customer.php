@@ -10,7 +10,7 @@
         "';";
     $result = mysqli_fetch_assoc(mysqli_query($con, $get_name));
 
-    $heading = "Welcome back " . $result['first_name'];
+    $heading = "Welcome back " . $result['first_name']."(".($_SESSION['user_email_id']).")";
     $title = 'FitKart Shopping';
     $links = [
         ["title" => "Logout", "href" => "users/logoutAction.php"],
